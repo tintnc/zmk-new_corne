@@ -28,34 +28,19 @@ static void draw_ble_disconnected(lv_obj_t *canvas) {
     lv_draw_img_dsc_t img_dsc;
     lv_draw_img_dsc_init(&img_dsc);
 
-    int x_pos = CONFIG_NICE_OLED_WIDGET_OUTPUT_BT_CUSTOM_X;
-    int y_pos = CONFIG_NICE_OLED_WIDGET_OUTPUT_BT_CUSTOM_Y;
-#if !IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
-    x_pos = 145;
-    y_pos = 0;
-#endif
-
-    lv_canvas_draw_img(canvas, x_pos, y_pos, &bt_no_signal, &img_dsc);
+    lv_canvas_draw_img(canvas, CONFIG_NICE_OLED_WIDGET_OUTPUT_BT_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_OUTPUT_BT_CUSTOM_Y, &bt_no_signal, &img_dsc);
 }
 
 static void draw_ble_connected(lv_obj_t *canvas) {
     lv_draw_img_dsc_t img_dsc;
     lv_draw_img_dsc_init(&img_dsc);
 
-    int x_pos = CONFIG_NICE_OLED_WIDGET_OUTPUT_BT_CUSTOM_X;
-    int y_pos = CONFIG_NICE_OLED_WIDGET_OUTPUT_BT_CUSTOM_Y;
-#if !IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
-    x_pos = 145;
-    y_pos = 0;
-#endif
-
-    lv_canvas_draw_img(canvas, x_pos, y_pos, &bt, &img_dsc);
+    lv_canvas_draw_img(canvas, CONFIG_NICE_OLED_WIDGET_OUTPUT_BT_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_OUTPUT_BT_CUSTOM_Y, &bt, &img_dsc);
 }
 
 void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
 #if IS_ENABLED(CONFIG_NICE_EPAPER_ON) &&                                                           \
-    !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_SHOW_BATTERY_PERIPHERAL_ALL) && \
-    IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+    !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_SHOW_BATTERY_PERIPHERAL_ALL)
     lv_draw_label_dsc_t label_dsc;
     init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono_16, LV_TEXT_ALIGN_LEFT);
     lv_canvas_draw_text(canvas, 0, 1, 25, &label_dsc, "SIG");
@@ -68,7 +53,7 @@ void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
 
 #else
 
-#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_OUTPUT_BACKGROUND) && IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_OUTPUT_BACKGROUND)
     lv_draw_rect_dsc_t rect_white_dsc;
     init_rect_dsc(&rect_white_dsc, LVGL_FOREGROUND);
     lv_canvas_draw_rect(canvas, -3, 32, 24, 15, &rect_white_dsc);
