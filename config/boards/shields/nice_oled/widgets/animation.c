@@ -242,7 +242,9 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL)
     lv_obj_center(art);
 
-#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HEAD)
+#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HAMMERBEAM)
+    lv_animimg_set_src(art, (const void **)hammerbeam_imgs, 30);
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HEAD)
     lv_animimg_set_src(art, (const void **)head_imgs, 16);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT)
     lv_animimg_set_src(art, (const void **)cat_imgs, 8);
@@ -250,8 +252,6 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     lv_animimg_set_src(art, (const void **)spaceman_imgs, 20);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_POKEMON)
     lv_animimg_set_src(art, (const void **)pokemon_imgs, 48);
-#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HAMMERBEAM)
-    lv_animimg_set_src(art, (const void **)hammerbeam_imgs, 30);
 #else
     lv_animimg_set_src(art, (const void **)crystal_imgs, 16);
 #endif
