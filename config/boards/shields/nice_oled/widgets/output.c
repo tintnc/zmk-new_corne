@@ -40,7 +40,8 @@ static void draw_ble_connected(lv_obj_t *canvas) {
 
 void draw_output_status(lv_obj_t *canvas, const struct status_state *state) {
 #if IS_ENABLED(CONFIG_NICE_EPAPER_ON) &&                                                           \
-    !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_SHOW_BATTERY_PERIPHERAL_ALL)
+    !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_CENTRAL_SHOW_BATTERY_PERIPHERAL_ALL) && \
+    IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
     lv_draw_label_dsc_t label_dsc;
     init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono_16, LV_TEXT_ALIGN_LEFT);
     lv_canvas_draw_text(canvas, 0, 1, 25, &label_dsc, "SIG");

@@ -72,8 +72,15 @@ static void draw_level(lv_obj_t *canvas, const struct status_state *state) {
 
     sprintf(text, "%i%%", state->battery);
     
+    int x_pos = CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_X;
+    int y_pos = CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_Y;
+#if !IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+    x_pos = 5;
+    y_pos = 0;
+#endif
+
     // x, y, width, dsc, text
-    lv_canvas_draw_text(canvas, CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_Y, 42, &label_right_dsc, text);
+    lv_canvas_draw_text(canvas, x_pos, y_pos, 42, &label_right_dsc, text);
 }
 
 static void draw_charging_level(lv_obj_t *canvas, const struct status_state *state) {
@@ -90,16 +97,23 @@ static void draw_charging_level(lv_obj_t *canvas, const struct status_state *sta
 
     sprintf(text, "%i", state->battery);
     
-    lv_canvas_draw_text(canvas, CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_X, CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_Y, 35, &label_right_dsc, text);
+    int x_pos = CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_X;
+    int y_pos = CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_Y;
+#if !IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+    x_pos = 5;
+    y_pos = 0;
+#endif
+
+    lv_canvas_draw_text(canvas, x_pos, y_pos, 35, &label_right_dsc, text);
 #if IS_ENABLED(CONFIG_NICE_EPAPER_ON)
-    lv_canvas_draw_img(canvas, CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_X + 36, CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_Y + 2, &bolt, &img_dsc);
+    lv_canvas_draw_img(canvas, x_pos + 36, y_pos + 2, &bolt, &img_dsc);
 #else
-    lv_canvas_draw_img(canvas, CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_X + 25, CONFIG_NICE_OLED_WIDGET_BATTERY_CUSTOM_Y, &bolt, &img_dsc);
+    lv_canvas_draw_img(canvas, x_pos + 25, y_pos, &bolt, &img_dsc);
 #endif // CONFIG_NICE_EPAPER_ON
 }
 
 void draw_battery_status(lv_obj_t *canvas, const struct status_state *state) {
-#if IS_ENABLED(CONFIG_NICE_EPAPER_ON)
+#if IS_ENABLED(CONFIG_NICE_EPAPER_ON) && IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
     lv_draw_label_dsc_t label_left_dsc;
     init_label_dsc(&label_left_dsc, LVGL_FOREGROUND, &pixel_operator_mono_16, LV_TEXT_ALIGN_LEFT);
     lv_canvas_draw_text(canvas, 0, 19, 25, &label_left_dsc, "BAT");
