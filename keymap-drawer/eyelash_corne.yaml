@@ -14,7 +14,7 @@ layers:
   - O
   - P
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-control$$'}
+  - $$mdi:apple-keyboard-control$$
   - A
   - S
   - D
@@ -79,7 +79,7 @@ layers:
   - )
   - +
   - '|'
-  - \
+  - {t: \, s: '|'}
   - ':'
   - {t: ;, s: ':'}
   - {t: '-', s: _}
@@ -99,7 +99,7 @@ layers:
   - {t: '''', s: '"'}
   - '"'
   SYMBOL:
-  - BT CLR ALL
+  - $$mdi:keyboard-esc$$
   - F1
   - F2
   - F3
@@ -148,7 +148,7 @@ layers:
   - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   Fn:
-  - '&studio_unlock'
+  - '&soft_off'
   - F1
   - F2
   - F3
@@ -178,7 +178,7 @@ layers:
   - F12
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&studio_unlock'
   - $$mdi:progress-download$$
   - {t: '$$mdi:transfer$$', type: trans}
   - '&mkp MB5'
