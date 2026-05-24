@@ -1,0 +1,7 @@
+file_format: 1
+id: nice_view_mementori
+name: nice!view Mementori
+type: shield
+features:
+  - display
+requires: [nice_view_header]

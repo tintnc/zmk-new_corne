@@ -1,0 +1,18 @@
+if SHIELD_NICE_VIEW_MEMENTORI
+
+config ZMK_DISPLAY
+    default y
+
+config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+    default y
+
+# Custom coordinate configurations compatible with standard nice!view widgets
+config NICE_VIEW_MEMENTORI_CUSTOM_X
+    int "Mementori X offset"
+    default 0
+
+config NICE_VIEW_MEMENTORI_CUSTOM_Y
+    int "Mementori Y offset"
+    default 0
+
+endif
