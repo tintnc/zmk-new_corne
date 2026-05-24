@@ -4,15 +4,19 @@ config ZMK_DISPLAY
     default y
 
 config LS0XX_VCOM_THREAD_PRIO
+    int
     default 11
 
 config LV_Z_VDB_SIZE
+    int
     default 100
 
 config LV_DPI_DEF
+    int
     default 161
 
 config LV_Z_BITS_PER_PIXEL
+    int
     default 1
 
 choice LV_COLOR_DEPTH
