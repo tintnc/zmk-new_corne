@@ -3,8 +3,9 @@ if SHIELD_NICE_VIEW_MEMENTORI
 config ZMK_DISPLAY
     default y
 
-config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
-    default y
+choice ZMK_DISPLAY_STATUS_SCREEN
+    default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+endchoice
 
 # Custom coordinate configurations compatible with standard nice!view widgets
 config NICE_VIEW_MEMENTORI_CUSTOM_X
