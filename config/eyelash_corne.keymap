@@ -78,10 +78,10 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&kp GRAVE  &kp N1                &kp N2       &kp N3          &kp N4           &kp N5                                          &mmv MOVE_UP                     &kp N6             &kp N7            &kp N8             &kp N9                &kp N0                 &kp EQUAL
-&kp TILDE  &kp EXCLAMATION       &kp AT_SIGN  &kp HASH        &kp DOLLAR       &kp PERCENT                     &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp CARET          &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS
-&kp PIPE   &kp NON_US_BACKSLASH  &kp COLON    &kp SEMICOLON   &kp MINUS        &kp LEFT_BRACKET  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp RIGHT_BRACKET  &kp UNDERSCORE    &kp LESS_THAN      &kp GREATER_THAN      &kp SLASH              &kp QUESTION
-                                              &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans                                                                           &trans             &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES
+&kp GRAVE  &kp N1           &kp N2       &kp N3          &kp N4           &kp N5                                          &mmv MOVE_UP                     &kp N6             &kp N7            &kp N8             &kp N9                &kp N0                 &kp EQUAL
+&kp TILDE  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH        &kp DOLLAR       &kp PERCENT                     &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp CARET          &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS
+&kp PIPE   &kp BACKSLASH    &kp COLON    &kp SEMICOLON   &kp MINUS        &kp LEFT_BRACKET  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp RIGHT_BRACKET  &kp UNDERSCORE    &kp LESS_THAN      &kp GREATER_THAN      &kp SLASH              &kp QUESTION
+                                         &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans                                                                           &trans             &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -102,9 +102,9 @@
         layer_3 {
             display-name = "Fn";
             bindings = <
-&studio_unlock  &kp F1      &kp F2     &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans          &trans      &mkp LCLK  &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans          &sys_reset  &trans     &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
+&soft_off  &kp F1      &kp F2          &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
+&trans     &trans      &mkp LCLK       &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
+&trans     &sys_reset  &studio_unlock  &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
                                        &trans       &trans     &trans                                                                   &trans       &trans     &trans
             >;
 
